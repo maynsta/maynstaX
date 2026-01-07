@@ -68,18 +68,11 @@ export function AccountContent({ profile: initialProfile, userId, userEmail }: A
   const [explicitEnabled, setExplicitEnabled] = useState(profile?.explicit_content_enabled ?? true)
   const [isSavingParental, setIsSavingParental] = useState(false)
 
-<<<<<<< HEAD
-// Artist state  👈 HIER
+// Artist state 
 const [isArtist, setIsArtist] = useState(profile?.is_artist ?? false)
 const [artistName, setArtistName] = useState(profile?.artist_name || "")
 const [artistBio, setArtistBio] = useState(profile?.artist_bio || "")
 const [isSavingArtist, setIsSavingArtist] = useState(false)
-=======
-  // Artist state
-  const [isArtist, setIsArtist] = useState(profile?.is_artist || false)
-  const [artistName, setArtistName] = useState(profile?.artist_name || "")
-  const [artistBio, setArtistBio] = useState(profile?.artist_bio || "")
-  const [isSavingArtist, setIsSavingArtist] = useState(false)
 
   const autoSaveParental = useCallback(
     debounce(async (enabled: boolean, pin: string, videos: boolean, explicit: boolean) => {
