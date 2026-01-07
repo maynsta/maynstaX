@@ -88,7 +88,6 @@ const [isSavingArtist, setIsSavingArtist] = useState(false)
     }, 1000),
     [userId, mutateProfile]
   )
->>>>>>> 2970e931 (Update account, auth pages, styles and UI components)
 
   const autoSaveArtist = useCallback(
     debounce(async (name: string, bio: string, enabled: boolean) => {
