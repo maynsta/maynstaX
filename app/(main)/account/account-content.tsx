@@ -248,7 +248,7 @@ const [isSavingArtist, setIsSavingArtist] = useState(false)
   }
 
  return (
-  <div className="p-8 max-w-4xl">
+  <div className="p-8 max-w-4xl pb-32">
     <h1 className="text-3xl font-bold text-foreground mb-6">Konto</h1>
 
     <Tabs defaultValue="profile">

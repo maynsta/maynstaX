@@ -178,7 +178,7 @@ export function SearchContent({ initialSearchHistory, userId }: SearchContentPro
               placeholder="Songs, Alben oder Künstler suchen..."
               value={query}
               onChange={handleQueryChange}
-              className="pl-10 pr-10 bg-card"
+              className="pl-10 pr-10 bg-card rounded-full"
             />
             {query && (
               <Button
@@ -192,11 +192,8 @@ export function SearchContent({ initialSearchHistory, userId }: SearchContentPro
               </Button>
             )}
           </div>
-          <Button type="submit" disabled={isSearching}>
-            {isSearching ? "Suche..." : "Suchen"}
-          </Button>
           {searchHistory && searchHistory.length > 0 && (
-            <Button type="button" variant="outline" size="icon" onClick={handleClearHistory} title="Verlauf löschen">
+            <Button type="button" variant="outline" size="icon" onClick={handleClearHistory} title="Verlauf löschen" className="rounded-full">
               <Trash2 className="h-4 w-4" />
             </Button>
           )}

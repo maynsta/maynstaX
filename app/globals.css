@@ -164,11 +164,11 @@
 }
 
 .stripe-bg {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
-  width: 120%;
-  height: 200%;
+  width: 100vw;
+  height: 100vh;
   z-index: -1;
   overflow: hidden;
   background: linear-gradient(
@@ -190,7 +190,7 @@
     stripe-rotate 20s linear infinite,
     stripe-pulse 4s ease-in-out infinite;
   opacity: 0.6;
-  filter: blur(50px);
+  filter: blur(40px);
 }
 
 .stripe-bg::before {
@@ -275,4 +275,39 @@
   top: 50%;
   animation: stripe-slide-reverse 11s linear infinite;
   animation-delay: 3s;
+}
+
+.stripe-6 {
+  background: linear-gradient(90deg, transparent, #ff0080, #ffd700, transparent);
+  top: 10%;
+  animation: stripe-slide 7s linear infinite;
+  animation-delay: 1s;
+}
+
+.stripe-7 {
+  background: linear-gradient(90deg, transparent, #40e0d0, #ff1493, transparent);
+  top: 70%;
+  animation: stripe-slide-reverse 13s linear infinite;
+  animation-delay: 5s;
+}
+
+.stripe-8 {
+  background: linear-gradient(90deg, transparent, #ff8c00, #9932cc, transparent);
+  top: 85%;
+  animation: stripe-slide 15s linear infinite;
+  animation-delay: 2s;
+}
+
+.stripe-9 {
+  background: linear-gradient(90deg, transparent, #ffd700, #00ff00, transparent);
+  top: 15%;
+  animation: stripe-slide-diagonal 10s linear infinite;
+  animation-delay: 4s;
+}
+
+.stripe-10 {
+  background: linear-gradient(90deg, transparent, #ff1493, #ff0080, transparent);
+  top: 75%;
+  animation: stripe-slide 9s linear infinite;
+  animation-delay: 0.5s;
 }

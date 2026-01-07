@@ -28,6 +28,11 @@ export default function LandingPage() {
             <div className="animated-stripe stripe-3"></div>
             <div className="animated-stripe stripe-4"></div>
             <div className="animated-stripe stripe-5"></div>
+            <div className="animated-stripe stripe-6"></div>
+            <div className="animated-stripe stripe-7"></div>
+            <div className="animated-stripe stripe-8"></div>
+            <div className="animated-stripe stripe-9"></div>
+            <div className="animated-stripe stripe-10"></div>
           </div>
         </div>
         
