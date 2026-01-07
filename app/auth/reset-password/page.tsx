@@ -1,12 +1,12 @@
 'use client'
 export const dynamic = 'force-dynamic'
 
-import { Suspense } from 'react'
+import { Suspense, useState, useEffect } from 'react'
+import { useRouter } from 'next/navigation'
+import { createClient } from '@supabase/supabase-js'
 import ResetPasswordForm from './ResetPasswordForm'
 
 export default function ResetPasswordPage() {
-<<<<<<< HEAD
-=======
   const [password, setPassword] = useState("")
   const [confirmPassword, setConfirmPassword] = useState("")
   const [error, setError] = useState<string | null>(null)
@@ -61,10 +61,10 @@ export default function ResetPasswordPage() {
     }, 2000)
   }
 
->>>>>>> 2970e931 (Update account, auth pages, styles and UI components)
   return (
     <Suspense fallback={<div className="flex min-h-svh items-center justify-center"><p>Lädt…</p></div>}>
       <ResetPasswordForm />
     </Suspense>
   )
 }
+
