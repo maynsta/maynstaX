@@ -50,20 +50,32 @@ export function AddSongToAlbumDialog({
     setIsLoading(true)
     const supabase = createClient()
 
-    let audioUrl: string | null = null
-    let videoUrl: string | null = null
+   let audioUrl: string | null = null
+let videoUrl: string | null = null
 
-    if (audioFile) {
-      const fileExt = audioFile.name.split(".").pop()
-      const fileName = `${userId}/${Date.now()}-audio.${fileExt}`
-      const { data } = await supabase.storage.from("audio").upload(fileName, audioFile)
-      if (data) {
-        const {
-          data: { publicUrl },
-        } = supabase.storage.from("audio").getPublicUrl(fileName)
-        audioUrl = publicUrl
-      }
-    }
+if (audioFile) {
+  const fileExt = audioFile.name.split(".").pop()
+  const fileName = `${userId}/${Date.now()}-audio.${fileExt}`
+
+  // Upload
+  const { data: uploadData, error: uploadError } = await supabase
+    .storage
+    .from("audio")
+    .upload(fileName, audioFile)
+
+  if (uploadError) {
+    console.error("Audio Upload Fehler:", uploadError.message)
+  } else {
+    // Public URL abrufen
+    const { data: publicData } = supabase
+      .storage
+      .from("audio")
+      .getPublicUrl(fileName)
+    
+    audioUrl = publicData.publicUrl
+    console.log("Audio erfolgreich hochgeladen:", audioUrl)
+  }
+}
 
     if (hasVideo && videoFile) {
       const fileExt = videoFile.name.split(".").pop()
